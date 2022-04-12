@@ -1,9 +1,16 @@
+import Tarea from "./Tarea";
+const tareas = [
+  { titulo: "Pasear a mi perrito" },
+  { titulo: "Tomar agua" },
+  { titulo: "Dormir" },
+];
+
 const ListaTareas = () => {
   return (
     <ul id="lista-tareas">
-      <li className="prioridad-alta">Pasear al toby</li>
-      <li className="prioridad-alta"> Segunda Tarea :)</li>
-      <li className="prioridad-alta"> Tercera Tarea ⚛🧠</li>
+      {tareas.map((tarea) => {
+        return <Tarea titulo={tarea.titulo} />;
+      })}
     </ul>
   );
 };
