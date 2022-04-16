@@ -1,5 +1,4 @@
 import "./App.css";
-import ListaTareas from "./ListaTareas";
 import FormListaTarea from "./FormListaTarea";
 import Counter from "./Components/Counter";
 
@@ -11,7 +10,6 @@ function App() {
         <Counter titulo="Hola. Soy un counter :D" subtitulo="Subtitulo" />
         <FormListaTarea />
         <h3>Tareas</h3>
-        <ListaTareas />
         <p>
           Para agregar tareas vamos a tener que hablar de eventos, el DOM y cómo
           interactuar con él
