@@ -14,16 +14,32 @@ const FormListaTarea = () => {
     titulo: "",
   });
 
+  const [errors, setErrors] = useState({
+    id: false,
+    titulo: false,
+  });
+
   const obtenerValorInput = (e) => {
     setNuevaTarea({ ...nuevaTarea, titulo: e.target.value });
   };
 
   const addTask = () => {
+    const newErrors = {};
+
+    if (!nuevaTarea.titulo) {
+      newErrors.titulo = true;
+      setErrors(newErrors);
+      return;
+    }
+
     const newTasks = [...tareas, nuevaTarea];
 
     setTareas(newTasks);
 
     setNuevaTarea({ id: "", titulo: "" });
+
+    newErrors.titulo = false;
+    setErrors(newErrors);
   };
 
   return (
@@ -50,6 +66,7 @@ const FormListaTarea = () => {
         </button>
       </form>
       <ListaTareas tareas={tareas} />
+      {errors.titulo && <span>Ingrese un título</span>}
     </>
   );
 };

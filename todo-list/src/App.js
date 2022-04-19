@@ -11,7 +11,6 @@ function App() {
         <Counter titulo="Hola. Soy un counter :D" subtitulo="Subtitulo" />
         <FormListaTarea />
         <h3>Tareas</h3>
-        <FormListaTarea />
         <p>
           Para agregar tareas vamos a tener que hablar de eventos, el DOM y cómo
           interactuar con él
