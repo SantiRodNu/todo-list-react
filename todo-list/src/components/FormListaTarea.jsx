@@ -1,10 +1,10 @@
 import { useState } from "react";
 import ListaTareas from "./ListaTareas";
 const tareasIniciales = [
-  { id: 1, titulo: "Ir al cine" },
-  { id: 2, titulo: "Pasear el perro" },
-  { id: 3, titulo: "Comprar fruta" },
-  { id: 4, titulo: "Tomar agua" },
+  { id: 1, titulo: "Ir al cine", prioridad: "prioridad-baja" },
+  { id: 2, titulo: "Pasear el perro", prioridad: "prioridad-alta" },
+  { id: 3, titulo: "Comprar fruta", prioridad: "prioridad-media" },
+  { id: 4, titulo: "Tomar agua", prioridad: "prioridad-alta" },
 ];
 
 const FormListaTarea = () => {
@@ -23,12 +23,13 @@ const FormListaTarea = () => {
     setNuevaTarea({ ...nuevaTarea, titulo: e.target.value });
   };
 
-  const addTask = () => {
+  const addTask = (e) => {
     const newErrors = {};
 
     if (!nuevaTarea.titulo) {
       newErrors.titulo = true;
       setErrors(newErrors);
+      e.preventDefault();
       return;
     }
 
@@ -40,11 +41,12 @@ const FormListaTarea = () => {
 
     newErrors.titulo = false;
     setErrors(newErrors);
+    e.preventDefault();
   };
 
   return (
     <>
-      <form action="javascript:void(0)">
+      <form>
         <input
           id="tarea"
           type="text"
@@ -53,8 +55,8 @@ const FormListaTarea = () => {
           placeholder="Descripción de la tarea"
           onChange={obtenerValorInput}
         />
-        <select name="prioridad" id="prioridad">
-          <option value="" disabled selected>
+        <select name="prioridad" id="prioridad" defaultValue="">
+          <option value="" disabled>
             Prioridad
           </option>
           <option value="prioridad-baja">baja</option>
