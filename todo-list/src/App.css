@@ -48,12 +48,12 @@ button {
 
 }
 
-ul {
+.ul-lista-tarea {
   list-style: none;
   min-width: 500px;
 }
 
-li {
+.ul-lista-tarea li {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid #ddd;
@@ -61,7 +61,7 @@ li {
   transition: all 300ms;
 }
 
-li:hover {
+.ul-lista-tarea li:hover {
   transform: translateY(-10px) scale(1.1);
   box-shadow: 0 10px 5px 0 rgba(90, 95, 101, 0.2);
 }

@@ -1,13 +1,5 @@
-import Nav from "../components/Nav/Nav";
-import MainTitle from "../components/MainTitle/MainTitle";
-
 const Home = () => {
-  return (
-    <>
-      <MainTitle titulo="Esto es el home" />
-      <Nav />
-    </>
-  );
+  return <h1>¡ESTO ES EL HOME!</h1>;
 };
 
 export default Home;

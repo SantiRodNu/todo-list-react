@@ -3,7 +3,7 @@ const ListaTareas = (props) => {
 
   return (
     <>
-      <ul id="lista-tareas">
+      <ul className="ul-lista-tarea" id="lista-tareas">
         {tareas.map((tarea, i) => {
           return (
             <li className={tarea.prioridad} key={i}>
