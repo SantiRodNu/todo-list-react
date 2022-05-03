@@ -7,6 +7,7 @@ import CounterWithUseEffect from "./useEffect/Counter";
 import CounteIncrement from "./useEffect/CounterIncrement";
 import Counter from "./components/Counter/Counter";
 import User from "./http/User";
+import User2 from "./http/User2";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <main>
         <h1>Lista de tareas</h1>
         {/* <First name="you" /> */}
-        <User />
+        <User2 />
         {/* <CounterWithUseEffect />
         <Router>
           <Nav />
