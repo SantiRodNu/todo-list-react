@@ -7,11 +7,12 @@ const tareasIniciales = [
   { id: 4, titulo: "Tomar agua", prioridad: "prioridad-alta" },
 ];
 
-const FormListaTarea = () => {
+const FormListaTarea = (props) => {
   const [tareas, setTareas] = useState(tareasIniciales);
   const [nuevaTarea, setNuevaTarea] = useState({
     id: Math.floor(Math.random() * 100),
     titulo: "",
+    prioridad: "prioridad-baja",
   });
 
   const [errors, setErrors] = useState({
@@ -20,7 +21,11 @@ const FormListaTarea = () => {
   });
 
   const obtenerValorInput = (e) => {
-    setNuevaTarea({ ...nuevaTarea, titulo: e.target.value });
+    setNuevaTarea({
+      ...nuevaTarea,
+      titulo: e.target.value,
+      prioridad: "prioridad-alta",
+    });
   };
 
   const addTask = (e) => {
